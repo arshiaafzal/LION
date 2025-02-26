@@ -1,4 +1,6 @@
-# LION
+# LION 🦁
+
+
 Coming soon!
 
 
