@@ -43,7 +43,7 @@ Transformers with Linear Attention enable fast and parallel training. Moreover, 
       <td>$\times 1.10$</td>
       <td>$\times 1.32$</td>
       <td>$\times 3.13$</td>
-      <td>✗</td>
+      <td>N.A</td>
     </tr>
 </table>
 
