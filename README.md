@@ -130,10 +130,10 @@ By combining these arguments, you can experiment with different positional embed
 
 **Notes:**  
 - Choose any desired size (e.g., `lion_base_patch16_224`, `lion_small_patch16_224` or `lion_tiny_patch16_224`).  
-- By changing the `--mask_type`, get different **LION** variants (e.g., LION-🔥, LION-D or LION-S).
-- Determine the internal representation format with `--format` (e.g., `Attention` for training, `RNN` or `Chunk` for inference).
+- By changing the `mask_type`, get different **LION** variants (e.g., LION-🔥, LION-D or LION-S).
+- Determine the internal representation format with `format` (e.g., `Attention` for training, `RNN` or `Chunk` for inference).
 - Adjust `nproc_per_node`, `batch-size`, `data-path`, and `output_dir` according to your hardware setup and dataset location.  
-- The additional flags (`--order`, `--pos_emb`, `--cls_tok`) control the specific training variations (e.g., changing patch-order “S,”, adding positional embeddings and using a classification token).
+- The additional flags (`order`, `pos_emb`, `cls_tok`) control the specific training variations (e.g., changing patch-order “S,”, adding positional embeddings and using a classification token).
 - As our codebase extends [DeiT](https://github.com/facebookresearch/deit), you can easily distill **RegNET** into a **LION** model by following the **same** distillation commands used for DeiT—just swap in the LION model name. This ensures you can leverage the established DeiT distillation process without additional modifications.
 
 Below are the results on Image Classification with ImageNet-1K for LION models vs benchmarks. 
