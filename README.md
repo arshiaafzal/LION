@@ -1,6 +1,9 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2502.16249-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white)](https://www.arxiv.org/abs/2502.16249)
 
 
+{% include figure.liquid loading="eager" path="/lion.jpg" %}
+
+
 ---
 
 # LION 🦁
