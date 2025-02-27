@@ -2,8 +2,7 @@
 
 # LION 🦁
 
-Coming soon!
-
+This repository includes the codes for LION model on image classification and Masked Language Modleing based on [Deit](https://github.com/facebookresearch/deit)
 
 
 # Image Classification
