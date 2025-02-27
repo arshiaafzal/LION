@@ -2,7 +2,7 @@
 
 
 <div style="float: left; width: 50%; max-width: 300px; margin-right: 10px;">
-  <img src="lion.jpg" alt="LION Model Overview" style="width: 100%;" />
+  <img src="lion.jpg" alt="LION Model Overview" style="width: 50%;" />
 </div>
 
 Transformers with Linear Attention enable fast and parallel training. Moreover, they can be formulated as Recurrent Neural Networks (RNNs), for efficient linear-time inference. While extensively evaluated in causal sequence modeling, they have yet to be extended to the bi-directional setting. We introduce the **LION** framework, establishing new theoretical foundations for Linear Transformers in bi-directional sequence modeling. **LION** constructs a bi-directional RNN equivalent to full **Linear Attention**. This extends the benefits of Linear Transformers—parallel training and efficient inference—into the bi-directional setting.
