@@ -1,0 +1,125 @@
+# Note that some of the fields in this template haven't been filled in yet.
+# Please resolve any `null` fields before launching!
+
+# Whether to run the various GLUE jobs serially or in parallel (use parallel=True to take advantage of multiple GPUs)
+parallel: true
+
+# Basic run configuration, additional details will be added to this name for each GLUE task, and each random seed
+base_run_name: hf-bert-large-uncased-nova-inputdep-lr0.0002-mlm0.3-lrft-1e-5 # Determines how runs are saved and logged in W&B
+default_seed: 19
+precision: amp_bf16 #ytchanged bf16 does not work, bf16
+
+# Tokenizer for dataset creation
+tokenizer_name: bert-large-uncased
+
+# Base model config
+model:
+  name: bert
+  pretrained_model_name: ${tokenizer_name}
+  tokenizer_name: ${tokenizer_name}
+  model_config:
+    num_attention_heads: 16 # bert-large default
+    num_hidden_layers: 24 # bert-large default
+    hidden_size: 1024 # bert-large default
+    max_position_embedding: 512
+    arch_type: lion-s
+    position_embedding_type: 'relative_key_query' #ytchanged just dummy value, not used in nova
+    layer_norm_after: false
+    
+
+# Loading
+starting_checkpoint_load_path: ./local-bert-checkpoints/hf-bert-large-uncased-nova-inputdep-lr0.0002-mlm0.3/latest-rank0.pt      # Fill this in with the composer checkpoint from the end of pre-training a HF BERT
+local_pretrain_checkpoint_folder: ./local-bert-checkpoints/
+
+# Saving
+save_finetune_checkpoint_prefix: ./local-finetune-checkpoints/ # (local)
+# save_finetune_checkpoint_prefix: s3://<bucket>/remote-finetune-checkpoints # (remote)
+save_finetune_checkpoint_folder: ${save_finetune_checkpoint_prefix}/${base_run_name}
+
+# (Optional) W&B logging
+loggers:
+  wandb:
+    project: nova_finetune      # Fill this in
+    name: hf-bert-large-uncased-nova-inputdep-lr0.0002-mlm0.3
+
+# Callbacks
+callbacks:
+  lr_monitor: {}
+  speed_monitor: {}
+
+# Scheduler
+scheduler:
+  name: linear_decay_with_warmup
+  t_warmup: 0.06dur
+  alpha_f: 0.0
+
+# Task configuration
+tasks:
+  mnli:
+    # Specify any extra task-specific arguments for the trainer here
+    trainer_kwargs:
+      # We keep one MNLI checkpoint locally so that we can start finetuning of
+      # RTE, MRPC and STS-B from the MNLI checkpoint
+      save_num_checkpoints_to_keep: 1
+      max_sequence_length: 128
+      #lr: 5.0e-05
+      lr: 1.0e-05
+      wd: 5.0e-06
+  rte:
+    seeds: [19, 8364, 717, 10536, 90166]
+    trainer_kwargs:
+      save_num_checkpoints_to_keep: 0
+      max_sequence_length: 128
+      #lr: 5.0e-5
+      lr: 1.0e-05
+      wd: 1.0e-6
+      max_duration: 2ep
+      optim_name: adamw
+  qqp:
+    trainer_kwargs:
+      save_num_checkpoints_to_keep: 0
+      max_sequence_length: 128
+      #lr: 3.0e-5
+      lr: 1.0e-05
+      wd: 3.0e-6
+  qnli:
+    trainer_kwargs:
+      save_num_checkpoints_to_keep: 0
+      max_sequence_length: 128
+      #lr: 5.0e-5
+      lr: 1.0e-05
+      wd: 1.0e-6
+      #pool_all: True
+  sst2:
+    seeds: [19, 8364, 717]
+    trainer_kwargs:
+      save_num_checkpoints_to_keep: 0
+      max_sequence_length: 128
+      #lr: 3.0e-5
+      lr: 1.0e-05
+      wd: 3.0e-6
+  stsb:
+    seeds: [19, 8364, 717, 10536, 90166]
+    trainer_kwargs:
+      save_num_checkpoints_to_keep: 0
+      max_sequence_length: 128
+      #lr: 8.0e-5
+      lr: 1.0e-05
+      wd: 3.0e-6
+      max_duration: 8ep
+  mrpc:
+    seeds: [19, 8364, 717, 10536, 90166]
+    trainer_kwargs:
+      save_num_checkpoints_to_keep: 0
+      max_sequence_length: 128
+      #lr: 8.0e-5
+      lr: 1.0e-05
+      wd: 8.0e-6
+  cola:
+    seeds: [19, 8364, 717, 10536]
+    trainer_kwargs:
+      save_num_checkpoints_to_keep: 0
+      max_sequence_length: 128
+      #lr: 5.0e-5
+      lr: 1.0e-05
+      wd: 1.0e-6
