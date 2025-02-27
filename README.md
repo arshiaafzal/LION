@@ -46,10 +46,6 @@ Transformers with Linear Attention enable fast and parallel training. Moreover, 
     </tr>
 </table>
 
-<div class="caption" style="color: #666666; margin-top: 1px;">
-    Training time (↓) relative to Transformer of the same scale
-</div>
-  
   </div>
 </div>
 
