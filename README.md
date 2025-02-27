@@ -172,7 +172,7 @@ To pretrain the model, run `main.py` with the desired configuration file. For ex
 composer main.py yamls/pretrain/lion-lit-large.yaml
 ```
 
-All of our pretrained weights are available  on [Huggingface](https://huggingface.co/collections/LIONS-EPFL/lion-67c0a5f094df709e5e9e7a58).
+All of our pretrained weights are available  on [Huggingface](https://huggingface.co/collections/LIONS-EPFL/lion-67c0a5f094df709e5e9e7a58) 🤗 .
 
 ### Finetuning
 
