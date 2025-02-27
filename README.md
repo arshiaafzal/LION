@@ -62,7 +62,7 @@ By replacing the attention block with **LION (-️‍🔥, -D, -S)**, we achieve
 
 This repository provides the code for the LION model, covering **image classification** and **masked language modeling (MLM)**. Our image classification setup is adapted from [DeiT](https://github.com/facebookresearch/deit), and the MLM implementation builds on [M2-BERT](https://github.com/HazyResearch/m2/tree/main).
 
-## Image Classification
+# Image Classification
 
 **Setup**: Please follow the instructions from the [DeiT](https://github.com/facebookresearch/deit) library to configure the environment. 
 
@@ -183,6 +183,17 @@ To finetune the model, run `glue.py` with the desired configuration file. For ex
 ```bash
 python3 glue.py yamls/finetune-glue/lion-lit-large.yaml
 ```
+
+Below are the results on MLM with C4 Dataset for LION models vs benchmarks. 
+
+
+| Model | MLM Acc. | GLUE | Train. time |
+|-------|----------|------|-------------|
+| BERT | $\underline{69.88}$ | $\mathbf{82.95}$ | $\times 1$ |
+| Hydra | $\mathbf{71.18}$ | $\underline{81.77}$ | $\times 3.13$ |
+| <span style="background-color: rgb(230, 255, 230); padding: 3px; color:black">LION-🔥 </span> | $67.11$ | $80.76$ | $\times \mathbf{0.95}$ |
+| <span style="background-color: rgb(229, 204, 230); padding: 3px; color:black">LION-D </span> | $68.64$ | $81.34$ | $\times \underline{1.10}$ |
+| <span style="background-color: rgb(255, 233, 211) ; padding: 3px; color:black">LION-S </span> | $69.16$ | $81.58$ | $\times 1.32$ |
 
 
 
