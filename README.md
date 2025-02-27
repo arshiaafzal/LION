@@ -2,12 +2,11 @@
 
 # LION 🦁
 
-This repository includes the codes for LION model on image classification and Masked Language Modleing based on [Deit](https://github.com/facebookresearch/deit)
-
+This repository includes the codes for LION model on image classification and Masked Language Modleing. Our Image Classification repo is based on [Deit](https://github.com/facebookresearch/deit) and the MLM is based on [M2-BERT](https://github.com/HazyResearch/m2/tree/main).
 
 # Image Classification
 
-
+`python -m torch.distributed.launch --nproc_per_node=4 --use_env main.py --model lion_base_patch16_224 --batch-size 256 --data-path /datapath --output_dir /outputpath --mask_type Decay --order S --format Attention`
 
 
 
