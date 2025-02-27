@@ -1,6 +1,11 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2502.16249-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white)](https://www.arxiv.org/abs/2502.16249)
 
 
+------------------
+
+# LION 🦁
+
+
 Transformers with Linear Attention enable fast and parallel training. Moreover, they can be formulated as Recurrent Neural Networks (RNNs), for efficient linear-time inference. While extensively evaluated in causal sequence modeling, they have yet to be extended to the bi-directional setting. We introduce the **LION** framework, establishing new theoretical foundations for Linear Transformers in bi-directional sequence modeling. **LION** constructs a bi-directional RNN equivalent to full **Linear Attention**. This extends the benefits of Linear Transformers: parallel training and efficient inference into the bi-directional setting.
 
 
@@ -54,11 +59,6 @@ Transformers with Linear Attention enable fast and parallel training. Moreover, 
 
 </div>
 
-
-
-
-
-
 Using **LION**, we cast three Linear Transformers to their bi-directional form:  
 - **LION-️‍🔥**, the bi-directional variant corresponding to [LinearTransformer](https://arxiv.org/abs/2006.16236).
 - **LION-D**, extending [RetNet](https://arxiv.org/abs/2307.08621).
@@ -68,8 +68,6 @@ By replacing the attention block with **LION (-️‍🔥, -D, -S)**, we achieve
 
 
 ---
-
-# LION 🦁
 
 This repository provides the code for the LION model, covering **image classification** and **masked language modeling (MLM)**. Our image classification setup is adapted from [DeiT](https://github.com/facebookresearch/deit), and the MLM implementation builds on [M2-BERT](https://github.com/HazyResearch/m2/tree/main).
 
