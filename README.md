@@ -1,5 +1,5 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2502.16249-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white)](https://www.arxiv.org/abs/2502.16249)
-[![Blog Post](https://img.shields.io/badge/Blog-Post-green?style=for-the-badge&logo=medium&logoColor=white)](https://your-blog-post-link.com)
+[![Blog Post](https://img.shields.io/badge/Blog-Post-green?style=for-the-badge&logo=medium&logoColor=white)](https://arshiaafzal.github.io/blog/2025/lion-part1-model/)
 
 
 ------------------
