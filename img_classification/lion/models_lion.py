@@ -13,7 +13,9 @@ from lion.curves import compute_curve_order,coords_to_index,index_to_coords_inde
 import warnings
 warnings.filterwarnings("ignore")
 
-__all__ = ['lion',
+__all__ = ['lion_base_patch16_224',
+           'lion_small_patch16_224',
+           'lion_tiny_patch16_224'
            ]
 
 # Mask Functions 
