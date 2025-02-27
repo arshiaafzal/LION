@@ -98,33 +98,27 @@ Inside models_lion, there are 3 sizes defined
 
 Below are some of the key arguments you can customize when training LION-based models:
 
-1. **`pos_emb`**  
-   - Enables fixed positional embeddings (as in ViT).  
+1. **`pos_emb`**  Enables fixed positional embeddings (as in ViT).  
    - Example usage: `--pos_emb True`
 
-2. **`cls_tok`**  
-   - Uses an independent classification token if set to `True`; otherwise, classification is based on the average pooling of all tokens (default `False`).  
+2. **`cls_tok`**   Uses an independent classification token if set to `True`; otherwise, classification is based on the average pooling of all tokens (default `False`).  
    - Example usage: `--cls_tok True`
 
-3. **`mask_type`**  
-   - Defines how masking or gating is applied. Supported options include `Lit`, `Decay`, and `Selective`.  
+3. **`mask_type`**  Defines how masking or gating is applied. Supported options include `Lit`, `Decay`, and `Selective`.  
    - Example usage: `--mask_type Decay`
 
-4. **`order`**  
-   - Specifies the order in which image patches are processed. Options include:
+4. **`order`**  Specifies the order in which image patches are processed. Options include:
      - `Normal` (default order)
      - `S` (special ordering)  
    - Example usage: `--order S`
 
-5. **`format`**  
-   - Controls the internal representation of the sequence. Valid options are:
+5. **`format`**  Controls the internal representation of the sequence. Valid options are:
      - `Attention` (standard attention-like format)
      - `RNN` (recurrent-like format)
      - `Chunk` (chunk-based approach)  
    - Example usage: `--format Attention`
 
-6. **`chunk_size`**  
-   - An integer that sets the size of chunks when using chunk-based processing.  
+6. **`chunk_size`**   An integer that sets the size of chunks when using chunk-based processing.  
    - Example usage: `--chunk_size 64`
 
 By combining these arguments, you can experiment with different positional embeddings, classification tokens, patch orders, and masking mechanisms to adapt the LION model to your specific tasks and preferences.
