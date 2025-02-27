@@ -12,7 +12,7 @@ Transformers with Linear Attention enable fast and parallel training. Moreover, 
 <div style="display: flex; align-items: flex-start;">
   
   <!-- Left Side: Text & Table -->
-  <div style="flex: 1; padding-right: 10px;">
+  <div style="flex: 1; padding-left: 10px;">
 
   <p>
   Existing memory-efficient bi-directional models employ more than 2x the training time of a Transformer. Our Linear Attention framework benefits from memory-efficient inference while maintaining the Transformer training speed.
@@ -51,12 +51,6 @@ Transformers with Linear Attention enable fast and parallel training. Moreover, 
 </div>
   
   </div>
-
-  <!-- Right Side: Figure -->
-  <div style="flex: 0 0 50%;">
-    <img src="lion.jpg" alt="LION Model Overview" style="width: 40%;" />
-  </div>
-
 </div>
 
 Using **LION**, we cast three Linear Transformers to their bi-directional form:  
