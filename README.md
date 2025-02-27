@@ -1,21 +1,70 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2502.16249-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white)](https://www.arxiv.org/abs/2502.16249)
 
 
-<div style="float: left; width: 50%; max-width: 300px; margin-right: 10px;">
-  <img src="lion.jpg" alt="LION Model Overview" style="width: 50%;" />
+Transformers with Linear Attention enable fast and parallel training. Moreover, they can be formulated as Recurrent Neural Networks (RNNs), for efficient linear-time inference. While extensively evaluated in causal sequence modeling, they have yet to be extended to the bi-directional setting. We introduce the **LION** framework, establishing new theoretical foundations for Linear Transformers in bi-directional sequence modeling. **LION** constructs a bi-directional RNN equivalent to full **Linear Attention**. This extends the benefits of Linear Transformers: parallel training and efficient inference into the bi-directional setting.
+
+
+<div style="display: flex; align-items: flex-start;">
+  
+  <!-- Left Side: Text & Table -->
+  <div style="flex: 1; padding-right: 10px;">
+
+  <p>
+  Existing memory-efficient bi-directional models employ more than 2x the training time of a Transformer. Our Linear Attention framework benefits from memory-efficient inference while maintaining the Transformer training speed.
+  </p>
+
+
+<table>
+    <tr>
+      <th>Task</th>
+      <th><span style="background-color: rgb(230, 255, 230); padding: 3px; color:black">🦁-🔥 </span></th>
+      <th><span style="background-color: rgb(229, 204, 230); padding: 3px; color:black">🦁-D </span></th>
+      <th><span style="background-color: rgb(255, 233, 211); padding: 3px; color:black">🦁-S </span></th>
+      <th>Hydra</th>
+      <th>Vim</th>
+    </tr>
+    <tr>
+      <td>Vision</td>
+      <td>$\times 0.73$</td>
+      <td>$\times 1.39$</td>
+      <td>$\times 1.46$</td>
+      <td>$\times 2.51$</td>
+      <td>$\times 10.86$</td>
+    </tr>
+    <tr>
+      <td>MLM </td>
+      <td>$\times 0.95$</td>
+      <td>$\times 1.10$</td>
+      <td>$\times 1.32$</td>
+      <td>$\times 3.13$</td>
+      <td>✗</td>
+    </tr>
+</table>
+
+<div class="caption" style="color: #666666; margin-top: 1px;">
+    Training time (↓) relative to Transformer of the same scale
+</div>
+  
+  </div>
+
+  <!-- Right Side: Figure -->
+  <div style="flex: 0 0 50%;">
+    {% include figure.liquid loading="eager" path="assets/img/fig1_plot.svg" %}
+  </div>
+
 </div>
 
-Transformers with Linear Attention enable fast and parallel training. Moreover, they can be formulated as Recurrent Neural Networks (RNNs), for efficient linear-time inference. While extensively evaluated in causal sequence modeling, they have yet to be extended to the bi-directional setting. We introduce the **LION** framework, establishing new theoretical foundations for Linear Transformers in bi-directional sequence modeling. **LION** constructs a bi-directional RNN equivalent to full **Linear Attention**. This extends the benefits of Linear Transformers—parallel training and efficient inference—into the bi-directional setting.
 
-Using **LION**, we cast three Linear Transformers to their bi-directional form:
 
-- **LION-️‍🔥**: The bi-directional variant corresponding to [LinearTransformer](https://arxiv.org/abs/2006.16236)  
-- **LION-D**: Extending [RetNet](https://arxiv.org/abs/2307.08621)  
-- **LION-S**: A Linear Transformer with a stable selective mask inspired by [Mamba🐍](https://arxiv.org/abs/2405.21060)
 
-By replacing the attention block with **LION (-️‍🔥, -D, -S)**, we achieve performance on bi-directional tasks comparable to Transformers and State-Space Models (SSMs), while delivering improved training speed.
 
-<br style="clear: left;" />
+
+Using **LION**, we cast three Linear Transformers to their bi-directional form:  
+- **LION-️‍🔥**, the bi-directional variant corresponding to [LinearTransformer](https://arxiv.org/abs/2006.16236).
+- **LION-D**, extending [RetNet](https://arxiv.org/abs/2307.08621).
+- **LION-S**, a Linear Transformer with a stable selective mask inspired by selectivity of SSMs like [Mamba🐍](https://arxiv.org/abs/2405.21060).
+
+By replacing the attention block with **LION (-️‍🔥, -D, -S)**, we achieve performance on bi-directional tasks that is comparable to Transformers and State-Space Models (SSMs) while improving training speed.
 
 
 ---
