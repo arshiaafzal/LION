@@ -49,7 +49,7 @@ Transformers with Linear Attention enable fast and parallel training. Moreover, 
 
   <!-- Right Side: Figure -->
   <div style="flex: 0 0 50%;">
-    {% include figure.liquid loading="eager" path="assets/img/fig1_plot.svg" %}
+    <img src="lion.jpg" alt="LION Model Overview" style="width: 40%;" />
   </div>
 
 </div>
