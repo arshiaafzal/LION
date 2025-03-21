@@ -215,7 +215,7 @@ If you use this work, please consider citing the paper:
 
 ----------
 
-# Commercial License
+#  License
 
 
 ##### © All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, Laboratory for Information and Inference Systems (LIONS), 2025. See the [LICENSE.TXT](https://github.com/LIONS-EPFL/LION/blob/main/LICENSE.txt) file for more details
