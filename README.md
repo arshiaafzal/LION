@@ -63,6 +63,8 @@ This repository provides the code for the LION model, covering **image classific
 
 # Image Classification
 
+![image info](./image.png)
+
 **Setup**: Please follow the instructions from the [DeiT](https://github.com/facebookresearch/deit) library to configure the environment. 
 
 Within the **Image Classification** folder, you’ll find `models_lion.py`, which contains the implementations of **LION-🔥**, **LION-D**, and **LION-S** in three formats: attention, recurrent and chunk-based. We also introduce specialized “curves.py” for processing image patches in **LION-D** and **LION-S**, enhancing spatial representation as discussed in our paper with notation **LION-D/S<sup>♮</sup>**.
