@@ -1,5 +1,5 @@
-[![arXiv](https://img.shields.io/badge/arXiv-2502.16249-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white)](https://www.arxiv.org/abs/2502.16249)
-[![Blog Post](https://img.shields.io/badge/Blog-Post-green?style=for-the-badge&logo=medium&logoColor=white)](https://lions-epfl.github.io/index.html)
+%[![arXiv](https://img.shields.io/badge/arXiv-2502.16249-B31B1B?style=for-the-badge&logo=arXiv&logoColor=white)](https://www.arxiv.org/abs/2502.16249)
+%[![Blog Post](https://img.shields.io/badge/Blog-Post-green?style=for-the-badge&logo=medium&logoColor=white)](https://lions-epfl.github.io/index.html)
 
 ------------------
 
@@ -200,7 +200,7 @@ Below are the results on MLM with C4 Dataset for LION models vs benchmarks.
 
 -------------------
 
-
+%%%
 # Citation
 If you use this work, please consider citing the paper:
 
@@ -216,7 +216,7 @@ If you use this work, please consider citing the paper:
 ```
 
 ----------
-
+%%%
 #  License
 
 
