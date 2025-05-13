@@ -1,9 +1,3 @@
-# Copyright 2018 The Google AI Language Team Authors and The HuggingFace Inc. team.
-# Copyright (c) 2018-2021, NVIDIA CORPORATION.  All rights reserved.
-# Copyright (c) 2022, Tri Dao.
-# Copyright (c) 2023, MosaicML.
-# Copyright (c) 2023, Dan Fu and Simran Arora.
-# Copyright (c) 2025, Arshia Afzal, Elias Abad Rocamora, Leyla Naz Candogan, Pol Puigdemont, Francesco Tonin, Yongtao Wu, Mahsa Shoaran, Volkan Cevher
 
 
 import copy
