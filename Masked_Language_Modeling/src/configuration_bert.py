@@ -1,6 +1,4 @@
-# Copyright 2025 LIONS-EPFL authors
-# Copyright 2022 MosaicML Examples authors
-# SPDX-License-Identifier: Apache-2.0
+
 
 from transformers import BertConfig as TransformersBertConfig
 
