@@ -6,7 +6,6 @@
 
 # LION 🦁
 
-Hello
 
 Transformers with Linear Attention enable fast and parallel training. Moreover, they can be formulated as Recurrent Neural Networks (RNNs), for efficient linear-time inference. While extensively evaluated in causal sequence modeling, they have yet to be extended to the bi-directional setting. We introduce the **LION** framework, establishing new theoretical foundations for Linear Transformers in bi-directional sequence modeling. **LION** constructs a bi-directional RNN equivalent to full **Linear Attention**. This extends the benefits of Linear Transformers: parallel training and efficient inference into the bi-directional setting.
 
@@ -200,31 +199,3 @@ Below are the results on MLM with C4 Dataset for LION models vs benchmarks.
 | <span style="background-color: rgb(255, 233, 211) ; padding: 3px; color:black">LION-S </span> | $69.16$ | $81.58$ | $\times 1.32$ |
 
 
-
--------------------
-
-<!--- 
-
-# Citation
-If you use this work, please consider citing the paper:
-
-```
-@article{afzal2025linear,
-  title={Linear Attention for Efficient Bidirectional Sequence Modeling},
-  author={Afzal, Arshia and Abad Rocamora, Elias and Candogan, Leyla Naz and Puigdemont, Pol and Tonin, Francesco and Wu, Yongtao and Shoaran, Mahsa and Cevher, Volkan},
-  journal={arXiv preprint arXiv:2502.16249},
-  year={2025},
-  url={https://arxiv.org/abs/2502.16249},
-  doi={10.48550/arXiv.2502.16249}
-}
-```
-
-----------
-%%%
-#  License
-
-
-##### © All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, Laboratory for Information and Inference Systems (LIONS), 2025. See the [LICENSE.TXT](https://github.com/LIONS-EPFL/LION/blob/main/LICENSE.txt) file for more details
-
-
--->
