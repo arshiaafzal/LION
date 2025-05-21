@@ -7,50 +7,12 @@
 # LION 🦁
 
 
-Transformers with Linear Attention enable fast and parallel training. Moreover, they can be formulated as Recurrent Neural Networks (RNNs), for efficient linear-time inference. While extensively evaluated in causal sequence modeling, they have yet to be extended to the bi-directional setting. We introduce the **LION** framework, establishing new theoretical foundations for Linear Transformers in bi-directional sequence modeling. **LION** constructs a bi-directional RNN equivalent to full **Linear Attention**. This extends the benefits of Linear Transformers: parallel training and efficient inference into the bi-directional setting.
+Linear Transformers and State Space Models have emerged as efficient alternatives to softmax Transformers for causal sequence modeling, enabling parallel training via matrix multiplication and efficient RNN-style inference. However, despite their success in causal tasks, no unified framework exists for applying Linear Transformers to bidirectional sequence modeling. We introduce LION, the first framework to systematically extend Linear Transformers to the bidirectional setting. LION generalizes three core representations commonly used in the causal case—full Linear Attention, bidirectional RNN, and chunkwise parallel form—to the bidirectional setting. These forms are theoretically equivalent and enable models to exploit the strengths of each during training and inference. We prove that a broad class of Linear Transformers can be extended using LION and validate our framework via three core examples based on the choice of decay type: LION-Lit, the bidirectional extension of Katharopoulos et al., 2020; LION-D, based on Sun et al., 2023; and LION-S, a variant using selective decay. Across standard bidirectional tasks, LION enables models to match or exceed the performance of softmax Transformers, while offering significantly faster training and more efficient inference than existing State Space Models.
 
 
-<div style="display: flex; align-items: flex-start;">
-  
-  <!-- Left Side: Text & Table -->
-  <div style="flex: 1; padding-left: 10px;">
-
-  <p>
-  Existing memory-efficient bi-directional models employ more than 2x the training time of a Transformer. Our Linear Attention framework benefits from memory-efficient inference while maintaining the Transformer training speed.
-  </p>
 
 
-<table>
-    <tr>
-      <th>Task</th>
-      <th><span style="background-color: rgb(230, 255, 230); padding: 3px; color:black">🦁-🔥 </span></th>
-      <th><span style="background-color: rgb(229, 204, 230); padding: 3px; color:black">🦁-D </span></th>
-      <th><span style="background-color: rgb(255, 233, 211); padding: 3px; color:black">🦁-S </span></th>
-      <th>Hydra</th>
-      <th>Vim</th>
-    </tr>
-    <tr>
-      <td>Vision</td>
-      <td>$\times 0.73$</td>
-      <td>$\times 1.39$</td>
-      <td>$\times 1.46$</td>
-      <td>$\times 2.51$</td>
-      <td>$\times 10.86$</td>
-    </tr>
-    <tr>
-      <td>MLM </td>
-      <td>$\times 0.95$</td>
-      <td>$\times 1.10$</td>
-      <td>$\times 1.32$</td>
-      <td>$\times 3.13$</td>
-      <td>N.A</td>
-    </tr>
-</table>
-
-  </div>
-</div>
-
-Using **LION**, we cast three Linear Transformers to their bi-directional form:  
+Using **LION**, we cast many Linear Transformers to their bi-directional form for running examples in code we refer to:  
 - **LION-️‍🔥**, the bi-directional variant corresponding to [LinearTransformer](https://arxiv.org/abs/2006.16236).
 - **LION-D**, extending [RetNet](https://arxiv.org/abs/2307.08621).
 - **LION-S**, a Linear Transformer with a stable selective mask inspired by the selectivity of SSMs like [Mamba🐍](https://arxiv.org/abs/2405.21060).
